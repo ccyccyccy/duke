@@ -3,9 +3,9 @@ package duke;
 public class Parser {
 
     /**
-     * Returns specific Duke.Duke.Command from given user input.
+     * Returns specific Command from given user input.
      * @param fullCommand User input string.
-     * @return Duke.Duke.Command to be executed.
+     * @return Command to be executed.
      */
     public static Command parse(String fullCommand) {
         String[] splitInput = fullCommand.split(" ");

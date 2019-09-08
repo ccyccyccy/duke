@@ -10,7 +10,7 @@ public class EventCommand extends Command {
     public String execute(TaskList tasks) throws DukeException {
         int atIndex = fullCommand.indexOf(" /at ");
         if (atIndex < 0) {
-            throw new DukeException("Duke.Duke.Command event requires an argument /at, followed by event date");
+            throw new DukeException("Command event requires an argument /at, followed by event date");
         }
         String eventDescription =  fullCommand.substring(6, atIndex);
         String at = fullCommand.substring(atIndex + 5);

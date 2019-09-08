@@ -36,7 +36,7 @@ public final class Storage {
 
     /**
      * Load data from filePath specified.
-     * @return Duke.Duke.TaskList as loaded from file.
+     * @return TaskList as loaded from file.
      * @throws DukeException When file format is wrong.
      * @throws IOException When unable to read file.
      */

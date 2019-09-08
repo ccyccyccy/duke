@@ -37,7 +37,7 @@ public class TaskList {
 
     /**
      * Delete task at index.
-     * @param index Duke.Duke.Task index to be deleted, zero-indexed.
+     * @param index Task index to be deleted, zero-indexed.
      */
     public void deleteTaskAt(int index) {
         this.tasks.remove(index);
@@ -45,7 +45,7 @@ public class TaskList {
 
     /**
      * Add task.
-     * @param task Duke.Duke.Task to be added.
+     * @param task Task to be added.
      */
     public void addTask(Task task) {
         this.tasks.add(task);

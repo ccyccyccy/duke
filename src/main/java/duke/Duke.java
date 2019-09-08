@@ -25,33 +25,9 @@ public class Duke {
         }
     }
 
-    /**
-     * Initialize and run program.
-     */
-    public void run() {
-        Ui ui = new Ui();
-        ui.showWelcome();
-
-        String input;
-        while (!(input = ui.readCommand()).equals("bye")) {
-            try {
-                Command c = Parser.parse(input);
-                c.execute(tasks);
-            } catch (DukeException e) {
-                System.out.println(e.getMessage());
-            }
-            try {
-                storage.save(tasks);
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        ui.showBye();
-    }
 
     /**
-     * You should have your own function to generate a response to user input.
-     * Replace this stub with your completed method.
+     * Duke's logic entry point.
      */
     public String getResponse(String input) {
         String output = "";

@@ -12,7 +12,7 @@ public class Deadline extends Task {
     private DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("d MMMM Y hh:mma");
 
     /**
-     * Duke.Duke.Deadline Constructor.
+     * Deadline Constructor.
      * @param description Description of deadline.
      * @param by Date string formatted in the form "d/M/yyyy HHmm".
      */
@@ -43,7 +43,7 @@ public class Deadline extends Task {
     /**
      * Transform string representation of deadline back to object.
      * @param saveString String representation of deadline.
-     * @return Duke.Duke.Deadline object constructed from saved data.
+     * @return Deadline object constructed from saved data.
      */
     public static Deadline parseSaveString(String saveString) {
         String[] saveStringArr = saveString.split("\\|");

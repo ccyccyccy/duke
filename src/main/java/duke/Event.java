@@ -12,7 +12,7 @@ public class Event extends Task {
     private DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("d MMMM Y hh:mma");
 
     /**
-     * Duke.Duke.Event Constructor.
+     * Event Constructor.
      * @param description Description of event.
      * @param at Date string formatted in the form "d/M/yyyy HHmm"
      */
@@ -39,7 +39,7 @@ public class Event extends Task {
     /**
      * Transform string representation of event back to object.
      * @param saveString String representation of event.
-     * @return Duke.Duke.Event object constructed from saved data.
+     * @return Event object constructed from saved data.
      */
     public static Event parseSaveString(String saveString) {
         String[] saveStringArr = saveString.split("\\|");
