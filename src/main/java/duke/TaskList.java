@@ -1,5 +1,7 @@
 package duke;
 
+import duke.task.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,7 +53,14 @@ public class TaskList {
         this.tasks.add(task);
     }
 
+    /**
+     * Returns list of tasks that fulfill search string.
+     * @param str Search string.
+     * @return TaskList containing tasks that contains search string.
+     */
     public TaskList search(String str) {
-        return new TaskList(this.tasks.stream().filter(t -> t.description.contains(str)).collect(Collectors.toList()));
+        return new TaskList(this.tasks.stream()
+                .filter(t -> t.getDescription().contains(str))
+                .collect(Collectors.toList()));
     }
 }

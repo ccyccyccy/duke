@@ -1,7 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.task.Task;
+import duke.TaskList;
 
 public class DoneCommand extends Command {
-    DoneCommand(String fullCommand) {
+
+    public static final String name = "done";
+
+    public DoneCommand(String fullCommand) {
         super(fullCommand);
     }
 

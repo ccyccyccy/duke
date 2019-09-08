@@ -1,7 +1,13 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.TaskList;
 
 public class ErrorCommand extends Command {
-    ErrorCommand(String fullCommand) {
+
+    public static final String name = "error";
+
+    public ErrorCommand(String fullCommand) {
         super(fullCommand);
     }
 

@@ -1,8 +1,12 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.TaskList;
 
 public abstract class Command {
     String fullCommand;
     String[] splitInput;
+    static String name = "INVALID_NAME"; // MUST BE OVERRIDDEN
 
     /**
      * Constructor for general Command class.

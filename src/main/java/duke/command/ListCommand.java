@@ -1,9 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.TaskList;
 
 import java.util.StringJoiner;
 
 public class ListCommand extends Command {
-    ListCommand(String fullCommand) {
+
+    public static final String name = "list";
+
+    public ListCommand(String fullCommand) {
         super(fullCommand);
     }
 

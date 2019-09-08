@@ -1,4 +1,4 @@
-package duke;
+package duke.task;
 
 import java.util.StringJoiner;
 
@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Event extends Task {
 
+
+    public static final char SYMBOL = 'E';
     private LocalDateTime at;
     private DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
     private DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("d MMMM Y hh:mma");
@@ -23,14 +25,14 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + at.format(outputFormat) + ")";
+        return "[" + SYMBOL + "]" + super.toString() + " (at: " + at.format(outputFormat) + ")";
     }
 
     @Override
     public String getSaveString() {
-        StringJoiner sj = new StringJoiner("|");
-        sj.add("E");
-        sj.add(isDone ? "1" : "0");
+        StringJoiner sj = new StringJoiner(DELIMITER);
+        sj.add(SYMBOL + "");
+        sj.add(isDone ? TASK_DONE : TASK_NOT_DONE);
         sj.add(description);
         sj.add(at.format(inputFormat));
         return sj.toString();
@@ -42,8 +44,8 @@ public class Event extends Task {
      * @return Event object constructed from saved data.
      */
     public static Event parseSaveString(String saveString) {
-        String[] saveStringArr = saveString.split("\\|");
-        boolean isDone = saveStringArr[1].equals("1");
+        String[] saveStringArr = saveString.split("\\" + DELIMITER);
+        boolean isDone = saveStringArr[1].equals(TASK_DONE);
         String description = saveStringArr[2];
         String at = saveStringArr[3];
         Event event = new Event(description, at);

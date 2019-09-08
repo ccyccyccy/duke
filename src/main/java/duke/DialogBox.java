@@ -57,6 +57,12 @@ public class DialogBox extends HBox {
         return new DialogBox(text, img, textBackgroundColor);
     }
 
+    /**
+     * Get DialogBox for Duke given text and image.
+     * @param text Message.
+     * @param img Display picture.
+     * @return
+     */
     public static DialogBox getDukeDialog(String text, Image img) {
         String textBackgroundColor = "#BFE9F9";
         var db = new DialogBox(text, img, textBackgroundColor);

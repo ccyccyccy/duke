@@ -1,7 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.task.Task;
+import duke.TaskList;
 
 public class DeleteCommand extends Command {
-    DeleteCommand(String fullCommand) {
+
+    public static final String name = "delete";
+
+    public DeleteCommand(String fullCommand) {
         super(fullCommand);
     }
 

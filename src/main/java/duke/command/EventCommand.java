@@ -1,8 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.task.Event;
+import duke.TaskList;
 
 public class EventCommand extends Command {
 
-    EventCommand(String fullCommand) {
+    public static final String name = "event";
+
+    public EventCommand(String fullCommand) {
         super(fullCommand);
     }
 

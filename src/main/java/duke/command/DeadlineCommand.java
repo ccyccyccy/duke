@@ -1,8 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.task.Deadline;
+import duke.DukeException;
+import duke.TaskList;
 
 public class DeadlineCommand extends Command {
 
-    DeadlineCommand(String fullCommand) {
+    public static final String name = "deadline";
+
+    public DeadlineCommand(String fullCommand) {
         super(fullCommand);
     }
 

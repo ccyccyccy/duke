@@ -1,5 +1,7 @@
 package duke;
 
+import duke.task.Task;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringJoiner;

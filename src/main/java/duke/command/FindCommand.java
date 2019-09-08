@@ -1,9 +1,15 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.TaskList;
 
 import java.util.StringJoiner;
 
 public class FindCommand extends Command {
-    FindCommand(String fullCommand) {
+
+    public static final String name = "find";
+
+    public FindCommand(String fullCommand) {
         super(fullCommand);
     }
 

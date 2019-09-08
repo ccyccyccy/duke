@@ -1,8 +1,10 @@
-package duke;
+package duke.task;
 
 import java.util.StringJoiner;
 
 public class Todo extends Task {
+
+    public static final char SYMBOL = 'T';
 
     /**
      * Todo Constructor.
@@ -14,14 +16,14 @@ public class Todo extends Task {
 
     @Override
     public String toString() {
-        return "[T]" + super.toString();
+        return "[" + SYMBOL + "]" + super.toString();
     }
 
     @Override
     public String getSaveString() {
-        StringJoiner sj = new StringJoiner("|");
-        sj.add("T");
-        sj.add(isDone ? "1" : "0");
+        StringJoiner sj = new StringJoiner(DELIMITER);
+        sj.add(SYMBOL + "");
+        sj.add(isDone ? TASK_DONE : TASK_NOT_DONE);
         sj.add(description);
         return sj.toString();
     }
@@ -32,8 +34,8 @@ public class Todo extends Task {
      * @return Todo object constructed from saved data.
      */
     public static Todo parseSaveString(String saveString) {
-        String[] saveStringArr = saveString.split("\\|");
-        boolean isDone = saveStringArr[1].equals("1");
+        String[] saveStringArr = saveString.split("\\" + DELIMITER);
+        boolean isDone = saveStringArr[1].equals(TASK_DONE);
         String description = saveStringArr[2];
         Todo todo = new Todo(description);
         if (isDone) {

@@ -1,5 +1,15 @@
 package duke;
 
+import duke.command.Command;
+import duke.command.DeadlineCommand;
+import duke.command.DeleteCommand;
+import duke.command.DoneCommand;
+import duke.command.ErrorCommand;
+import duke.command.EventCommand;
+import duke.command.FindCommand;
+import duke.command.ListCommand;
+import duke.command.TodoCommand;
+
 public class Parser {
 
     /**
@@ -11,19 +21,19 @@ public class Parser {
         String[] splitInput = fullCommand.split(" ");
         String command = splitInput[0];
         switch (command) {
-        case "list":
+        case ListCommand.name:
             return new ListCommand(fullCommand);
-        case "done":
+        case DoneCommand.name:
             return new DoneCommand(fullCommand);
-        case "delete":
+        case DeleteCommand.name:
             return new DeleteCommand(fullCommand);
-        case "deadline":
+        case DeadlineCommand.name:
             return new DeadlineCommand(fullCommand);
-        case "event":
+        case EventCommand.name:
             return new EventCommand(fullCommand);
-        case "todo":
+        case TodoCommand.name:
             return new TodoCommand(fullCommand);
-        case "find":
+        case FindCommand.name:
             return new FindCommand(fullCommand);
         default:
             return new ErrorCommand(fullCommand);

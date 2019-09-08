@@ -1,7 +1,14 @@
-package duke;
+package duke.command;
+
+import duke.DukeException;
+import duke.TaskList;
+import duke.task.Todo;
 
 public class TodoCommand extends Command {
-    TodoCommand(String fullCommand) {
+
+    public static final String name = "todo";
+
+    public TodoCommand(String fullCommand) {
         super(fullCommand);
     }
 
